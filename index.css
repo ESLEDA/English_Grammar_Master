@@ -131,4 +131,197 @@ nav {
             TODO css for the 1rs secction
 _______________________________________________________*/
 
+/*______________________________________________________
+            CSS for the TENSES SECTION
+_______________________________________________________*/
+
+/* ── Section wrapper ── */
+.tenses-section {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 48px;
+}
+
+/* ── Header ── */
+.tenses-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tenses-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.tenses-subtitle {
+  font-size: 0.88rem;
+  color: #777;
+  max-width: 580px;
+  margin: 0 auto 22px;
+  line-height: 1.6;
+}
+
+/* ── Legend ── */
+.tenses-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.tenses-legend span + span {
+  margin-right: 16px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  margin-right: 0 !important;
+}
+
+.legend-dot.past    { background: #3a57e8; }
+.legend-dot.present { background: #16a74a; }
+.legend-dot.future  { background: #f07030; }
+
+/* ── Grid ── */
+.tenses-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ── Card ── */
+.tense-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid #eaeaea;
+  padding: 16px 18px 20px;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  animation: cardIn 0.35s both ease-out;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tense-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+
+.tense-card--past:hover    { border-color: #3a57e8; }
+.tense-card--present:hover { border-color: #16a74a; }
+.tense-card--future:hover  { border-color: #f07030; }
+
+/* ── Card top row ── */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.card-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.badge--past    { background: #3a57e8; }
+.badge--present { background: #16a74a; }
+.badge--future  { background: #f07030; }
+
+.card-plus {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Card content ── */
+.card-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.card-example {
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.card-example b {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .tenses-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .tenses-grid { grid-template-columns: 1fr; }
+  .tenses-title { font-size: 1.5rem; }
+}
+
+
+/*______________________________________________________
+            CSS for the DETAIL PAGE
+_______________________________________________________*/
+
+.detail-page {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 48px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  animation: cardIn 0.3s both ease-out;
+}
+
+.back-btn {
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+}
+
+.back-btn:hover {
+  border-color: #3a57e8;
+  color: #3a57e8;
+}
+
+.detail-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
 

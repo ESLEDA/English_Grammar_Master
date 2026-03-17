@@ -1,0 +1,237 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── CSS Variables per group (overridden per page via <style>) ── */
+:root {
+  --accent:      #16a74a;
+  --accent-light:#e6f9ee;
+  --accent-mid:  #b2eac9;
+  --header-from: #16a74a;
+  --header-to:   #0d7a36;
+  --badge-bg:    #16a74a;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #edf0f4;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── HERO HEADER ── */
+.hero {
+  background: linear-gradient(135deg, var(--header-from), var(--header-to));
+  padding: 28px 40px 36px;
+  color: #fff;
+  animation: heroIn 0.5s ease-out both;
+}
+
+@keyframes heroIn {
+  from { opacity:0; transform:translateY(-16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.18);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 18px;
+  transition: background 0.18s;
+}
+.back-btn:hover { background: rgba(255,255,255,0.30); }
+
+.hero-en   { font-size: 2.4rem; font-weight: 800; line-height: 1.1; }
+.hero-es   { font-size: 1rem;   font-weight: 600; opacity: 0.82; margin-top: 4px; }
+
+/* ── MAIN LAYOUT ── */
+.page-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .page-body { grid-template-columns: 1fr; }
+}
+
+/* ── CARD (shared panel) ── */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid #e8e8e8;
+  padding: 28px 30px;
+  margin-bottom: 20px;
+  animation: cardIn 0.4s ease-out both;
+}
+.card:last-child { margin-bottom: 0; }
+
+@keyframes cardIn {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+
+.card h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.card p.desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── STRUCTURE CARD ── */
+.struct-block { margin-bottom: 24px; }
+.struct-block:last-child { margin-bottom: 0; }
+
+.struct-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.struct-label.affirm { color: #16a74a; }
+.struct-label.neg    { color: #e03535; }
+.struct-label.inter  { color: #3a57e8; }
+
+.struct-box {
+  background: #f7f8fa;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  padding: 14px 18px;
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.9;
+}
+
+.struct-box .formula {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 0.83rem;
+}
+
+.struct-box ul { list-style: none; }
+.struct-box ul li::before { content: "• "; color: #aaa; }
+.struct-box ul li { font-size: 0.84rem; color: #555; }
+.struct-box ul li b { color: #1a1a2e; font-weight: 800; }
+
+/* ── USES GRID ── */
+.uses-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+.use-item {
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.84rem;
+}
+.use-item .use-title {
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.use-item .use-desc { color: #666; font-size: 0.8rem; margin-bottom: 6px; }
+.use-item .use-ex   { font-family: monospace; font-size: 0.8rem; color: #444; }
+
+/* ── USE ITEM COLORS ── */
+.use-green  { background: #edfaf3; } .use-green  .use-title { color: #16a74a; }
+.use-blue   { background: #eef2ff; } .use-blue   .use-title { color: #3a57e8; }
+.use-purple { background: #f3eeff; } .use-purple .use-title { color: #7c3aed; }
+.use-orange { background: #fff5ee; } .use-orange .use-title { color: #f07030; }
+.use-red    { background: #fff0f0; } .use-red    .use-title { color: #e03535; }
+.use-teal   { background: #eafafa; } .use-teal   .use-title { color: #0d8a8a; }
+.use-yellow { background: #fdfbea; } .use-yellow .use-title { color: #b08800; }
+.use-pink   { background: #fdf0f7; } .use-pink   .use-title { color: #b0388a; }
+
+/* ── RULES CARD ── */
+.rule-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 14px 0;
+  font-size: 0.87rem;
+}
+.rule-item:last-child { border-bottom: none; padding-bottom: 0; }
+.rule-item .rule-title { font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
+.rule-item .rule-desc  { color: #666; font-size: 0.83rem; margin-bottom: 6px; }
+.rule-item .rule-ex    { font-family: monospace; font-size: 0.81rem; color: var(--accent); }
+.rule-item .rule-note  { font-size: 0.78rem; color: #999; margin-top: 4px; }
+
+/* ── SIDEBAR ── */
+.sidebar .card { margin-bottom: 20px; }
+.sidebar .card:last-child { margin-bottom: 0; }
+
+/* Keywords */
+.keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.kw-tag {
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--accent-mid);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* Related tenses */
+.related-list { list-style: none; margin-top: 10px; }
+.related-list li { margin-bottom: 2px; }
+.related-list a {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 8px;
+  transition: background 0.18s;
+}
+.related-list a:hover { background: #f5f5f5; }
+.related-list a.past    { color: #3a57e8; }
+.related-list a.present { color: #16a74a; }
+.related-list a.future  { color: #f07030; }
+
+/* Tip box */
+.tip-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+  font-size: 0.84rem;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.tip-box strong { color: var(--accent); }
